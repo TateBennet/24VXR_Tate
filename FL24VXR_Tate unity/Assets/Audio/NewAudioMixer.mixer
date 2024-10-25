@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-4632496612625177868
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c582f98371f2e7e4ba2084c493f77adf
+  m_EffectName: Attenuation
+  m_MixLevel: 07495cd934f395f4193b499bb2757492
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-3594606115650597543
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: f415ff6edbfc28a4aba644fa506600ab
+  m_EffectName: Attenuation
+  m_MixLevel: 6da8fdd9649694647ba63dd35aeab6c6
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NewAudioMixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  - {fileID: 3578865645433460461}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 9a356383a746b7f4789f2cd715386633
+    - 30ad7936bcd10e04494c93110b744f35
+    - 1836aa6759360de40855eae4d3418b26
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 3578865645433460461}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9a356383a746b7f4789f2cd715386633
+  m_Children:
+  - {fileID: 2298695080890350613}
+  - {fileID: 6133007509373932030}
+  m_Volume: 226f2dd0c531e254e8c54cc50d141454
+  m_Pitch: bb5849332aef8d6419c3d9f97a84164e
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: af0b38c7c7fd8de4d90734d38b6dc081
+  m_EffectName: Attenuation
+  m_MixLevel: 6c286247aa5b8ca4b808f288c3959291
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Night
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: f799b7f51b2ba2f44bee3a8b823d5471
+  m_FloatValues:
+    a7ceeb22293e6a74491358a361dad66e: -80
+    e9944eaa22590cc49a98bff5c55f213a: 0
+  m_TransitionOverrides: {}
+--- !u!243 &2298695080890350613
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DaySFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 30ad7936bcd10e04494c93110b744f35
+  m_Children: []
+  m_Volume: a7ceeb22293e6a74491358a361dad66e
+  m_Pitch: 48aa828291f392e45a1c496b00c0f7a9
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -4632496612625177868}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!245 &3578865645433460461
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Day
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: d44222ae32990484fb684a60ef4613a9
+  m_FloatValues:
+    e9944eaa22590cc49a98bff5c55f213a: -80
+  m_TransitionOverrides: {}
+--- !u!243 &6133007509373932030
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NightSFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 1836aa6759360de40855eae4d3418b26
+  m_Children: []
+  m_Volume: e9944eaa22590cc49a98bff5c55f213a
+  m_Pitch: 971ac5e7113e51440b51341e88fdfb0a
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3594606115650597543}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0

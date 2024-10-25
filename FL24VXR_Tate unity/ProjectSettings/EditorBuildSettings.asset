@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/color and transform.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 381d1516a027c5a49bc3659231aedcc0,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: b2af31a5a939d894cabf70c662d2eeb9,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: d1ecdcbd40ed38840b3fee55ac5e9d93,
+      type: 2}
