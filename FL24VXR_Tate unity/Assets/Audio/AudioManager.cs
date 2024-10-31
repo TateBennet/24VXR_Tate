@@ -7,7 +7,7 @@ using UnityEngine.Audio;
 
 public class PlaybackManager : MonoBehaviour
 {
-    public AudioSource audio1, audio2, audio3, audio4, auido5, audio6;
+    public AudioSource thunder, owls, crows, gate, bushes, rockingChair;
     public AudioClip myClip;
     //public Slider volumeSlider;
 
