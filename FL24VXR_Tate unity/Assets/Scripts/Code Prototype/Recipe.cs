@@ -19,6 +19,6 @@ public class Recipe
         minCookTime = _minCookTime;
         maxCookTime = _maxCookTime;
         List<int> ints = _ingredientIDs;
-        markup = _markup; 
+        markup = _markup;
     }
 }

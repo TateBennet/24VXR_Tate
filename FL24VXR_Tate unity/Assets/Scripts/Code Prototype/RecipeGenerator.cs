@@ -15,7 +15,8 @@ public class RecipeGenerator : MonoBehaviour
     public timer timer; //refernece to my timer
 
     public TextMeshProUGUI scoreText; // UI Text field to display the score
-    private int score = 0;
+    private float score = 0;
+    public float multiplier = 1; //score multiplier
 
     void Start()
     {
@@ -84,6 +85,7 @@ public class RecipeGenerator : MonoBehaviour
             if (currentSelectedObjects[i].name != ingredientManager.panIngredients[i].name)
             {
                 allMatch = false;
+                multiplier = 1;
                 break; // Exit loop as soon as a mismatch is found
             }
         }
@@ -91,12 +93,13 @@ public class RecipeGenerator : MonoBehaviour
         // Output result
         if (allMatch)
         {
-            AddPoints(10);
+            AddPoints(10 * multiplier);
+            multiplier = multiplier + 0.1f;
         }
     }
 
     // Method to add points to the score
-    void AddPoints(int points)
+    void AddPoints(float points)
     {
         score += points;
         UpdateScoreText();

@@ -7,6 +7,7 @@ public class timer : MonoBehaviour
 {
 
     [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI gameOver;
     [SerializeField] float remainingTime; //field to adjust the remaining time
     public bool isInputBlocked = false; //check to disable things after timer reaches zero
 
@@ -22,6 +23,7 @@ public class timer : MonoBehaviour
         {
             remainingTime = 0; //keeps clock from running into negative
             isInputBlocked = true; //sets input block variable
+            gameOver.gameObject.SetActive(true); //displays game over text
         }
 
         //calcuklates remaining time and updates it onscreen
