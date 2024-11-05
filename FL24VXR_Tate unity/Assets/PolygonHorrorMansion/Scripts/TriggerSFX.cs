@@ -7,18 +7,15 @@ public class TriggerSFX : MonoBehaviour
 {
     // Start is called before the first frame update
     public AudioSource playSound;
-    bool hasPlayed = false;
+    //bool hasPlayed = false;
 
     void OnTriggerEnter(Collider other)
     {
-        if (!hasPlayed)
-        {
+    
             playSound.Play();
-            hasPlayed = true;
-        } else
-        {
-            return;
-        }
+            gameObject.SetActive(false);
+            //hasPlayed = true;
+   
     }
 }
 
