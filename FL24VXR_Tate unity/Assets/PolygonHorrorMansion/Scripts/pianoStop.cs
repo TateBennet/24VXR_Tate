@@ -23,15 +23,26 @@ public class pianoStop : MonoBehaviour
             {
                 stopSound.Stop();
                 playSound.Play();
-                playSound2.Play();
                 playSound3.Play();
-                pianoDoor.Play(chooseAnimation, 0, 0.0f);
-                gameObject.SetActive(false); 
+
+                StartCoroutine(DeactivateAfterDelay(2f));
+
+                
 
             }
 
         }
 
+    }
+
+    private IEnumerator DeactivateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        playSound2.Play();
+        pianoDoor.Play(chooseAnimation, 0, 0.0f);
+
+
+        gameObject.SetActive(false);
     }
 
 }

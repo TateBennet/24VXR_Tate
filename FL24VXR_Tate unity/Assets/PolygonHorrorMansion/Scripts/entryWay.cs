@@ -12,6 +12,8 @@ public class entryWay : MonoBehaviour
     [SerializeField] private Animator hallwayL = null;
     [SerializeField] private Animator chanda = null;
 
+    public PlaybackManager playbackManager;
+
     [SerializeField] private bool openTrigger = false;
 
     public Light flickerLight; // Reference to the Light component
@@ -39,6 +41,7 @@ public class entryWay : MonoBehaviour
             if (openTrigger && !playSound.isPlaying)
             {
                 moveProvider.enabled = false;
+                playbackManager.TransitionDay();
                 playSound.Play();
                 StartCoroutine(DeactivateAfterDelay(2.0f));
                 StartCoroutine(Flicker());
