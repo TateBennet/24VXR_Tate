@@ -33,7 +33,7 @@ public class buttonVR : MonoBehaviour
     {
         if(other.gameObject == presser)
         {
-            button.transform.localPosition = new Vector3(0,0.015f,0);
+            button.transform.localPosition = new Vector3(0, 0.015f, 0);
             onRelease.Invoke();
             isPressed=false;
         }
@@ -46,6 +46,7 @@ public class buttonVR : MonoBehaviour
         sphere.transform.localScale = new Vector3(0.345f, 0.345f, 0.345f);
         sphere.AddComponent<Rigidbody>();
         sphere.AddComponent<XRGrabInteractable>();
+
     }
 
 }
