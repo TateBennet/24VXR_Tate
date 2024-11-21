@@ -13,6 +13,10 @@ public class buttonVR : MonoBehaviour
     GameObject presser;
     bool isPressed;
 
+    [SerializeField] private Animator diskTray = null;
+
+    [SerializeField] private string chooseAnimation = "animationName";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,7 @@ public class buttonVR : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!isPressed) {
-            button.transform.localPosition = new Vector3(0, 0.003f, 0);
+            button.transform.localPosition = new Vector3(0, 0, -0.003f);
             presser = other.gameObject;
             onPress.Invoke();
             isPressed = true;
@@ -33,7 +37,7 @@ public class buttonVR : MonoBehaviour
     {
         if(other.gameObject == presser)
         {
-            button.transform.localPosition = new Vector3(0, 0.015f, 0);
+            button.transform.localPosition = new Vector3(0, 0, -0.006f);
             onRelease.Invoke();
             isPressed=false;
         }
@@ -47,6 +51,11 @@ public class buttonVR : MonoBehaviour
         sphere.AddComponent<Rigidbody>();
         sphere.AddComponent<XRGrabInteractable>();
 
+    }
+
+    public void diskTrayFunction()
+    {
+        diskTray.Play(chooseAnimation, 0, 0.0f);
     }
 
 }
