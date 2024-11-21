@@ -1417,6 +1417,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "aButtonAction",
+                    "type": "Button",
+                    "id": "7e9f9eeb-4ef0-4be7-824f-9743f6e24b46",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1560,6 +1569,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "UI Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "512df398-9fc6-4e50-a9c6-1b89ece84aa2",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Generic XR Controller",
+                    "action": "aButtonAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
