@@ -11,6 +11,7 @@ public class buttonVR : MonoBehaviour
     public UnityEvent onPress;
     public UnityEvent onRelease;
     GameObject presser;
+    public GameObject helium;
     bool isPressed;
 
     [SerializeField] private Animator diskTray = null;
@@ -56,6 +57,16 @@ public class buttonVR : MonoBehaviour
     public void diskTrayFunction()
     {
         diskTray.Play(chooseAnimation, 0, 0.0f);
+        StartCoroutine(ActivateAfterSeconds(2f));
+    }
+
+    IEnumerator ActivateAfterSeconds(float delay)
+    {
+        // Wait for the specified time
+        yield return new WaitForSeconds(delay);
+
+        // Activate the GameObject
+        helium.SetActive(true);
     }
 
 }

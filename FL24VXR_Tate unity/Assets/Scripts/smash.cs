@@ -11,11 +11,6 @@ public class smash : MonoBehaviour
     public Transform playerHead;     // Assign the camera (e.g., XR Rig's "Main Camera") here
     public float spawnDistance = 0.1f; // Distance in front of the player to spawn the object
 
-    private void Update()
-    {
-        //bool isHoldingHydrogenAndChlorine = IsHoldingHydrogenAndChlorine();
-    }
-
     bool IsHoldingHydrogen()
     {
         // Check if the left hand is holding an object and if it has the tag "helium"
@@ -45,18 +40,20 @@ public class smash : MonoBehaviour
         return false;
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
 
         bool isHoldingHydrogen = IsHoldingHydrogen();
         bool isHoldingChlorine = IsHoldingChlorine();
-        
+        GameObject rightHandObject = rightHandInteractor.firstInteractableSelected.transform.gameObject;
+        GameObject leftHandObject = leftHandInteractor.firstInteractableSelected.transform.gameObject;
+
         // Check if the colliding object is the main part of Prefab2
         if (isHoldingHydrogen && isHoldingChlorine)
         {
             // Destroy both prefabs
-            Destroy(other.gameObject); // Destroy Prefab2
-            Destroy(this.gameObject); // Destroy Prefab1's parent
+            Destroy(rightHandObject);
+            Destroy(leftHandObject);
 
             if (prefabToSpawn != null && playerHead != null)
             {

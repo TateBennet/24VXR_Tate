@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.UI;
 
 public class Invisiline : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Invisiline : MonoBehaviour
         // Subscribe to hover events
         rayInteractor.hoverEntered.AddListener(OnHoverEntered);
         rayInteractor.hoverExited.AddListener(OnHoverExited);
+        rayInteractor.uiHoverEntered.AddListener(OnUIEntered);
+        rayInteractor.uiHoverExited.AddListener(OnUIExited);
     }
 
     private void OnDisable()
@@ -33,6 +36,8 @@ public class Invisiline : MonoBehaviour
         // Unsubscribe to avoid memory leaks
         rayInteractor.hoverEntered.RemoveListener(OnHoverEntered);
         rayInteractor.hoverExited.RemoveListener(OnHoverExited);
+        rayInteractor.uiHoverEntered.RemoveListener(OnUIEntered);
+        rayInteractor.uiHoverExited.RemoveListener(OnUIExited);
     }
 
     private void OnHoverEntered(HoverEnterEventArgs args)
@@ -41,6 +46,24 @@ public class Invisiline : MonoBehaviour
         if (lineVisual != null)
         {
             lineVisual.enabled = true;
+        }
+    }
+
+    private void OnUIEntered(UIHoverEventArgs args)
+    {
+        // Enable the line visual when pointing at a grabbable object
+        if (lineVisual != null)
+        {
+            lineVisual.enabled = true;
+        }
+    }
+
+    private void OnUIExited(UIHoverEventArgs args)
+    {
+        // Disable the line visual when no longer pointing at a grabbable object
+        if (lineVisual != null)
+        {
+            lineVisual.enabled = false;
         }
     }
 
@@ -53,4 +76,3 @@ public class Invisiline : MonoBehaviour
         }
     }
 }
-
