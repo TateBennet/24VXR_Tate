@@ -25,7 +25,7 @@ public class SpawnMenuController : MonoBehaviour
         {
             // Place the menu in front of the player
             Transform playerTransform = Camera.main.transform; // For VR, usually main camera is the head
-            menuPanel.transform.position = playerTransform.position + playerTransform.forward * 1f; // Adjust distance
+            menuPanel.transform.position = playerTransform.position + playerTransform.forward * 0.5f; // Adjust distance
             menuPanel.transform.rotation = Quaternion.LookRotation(playerTransform.forward); // Face the player
         }
     }
@@ -35,7 +35,8 @@ public class SpawnMenuController : MonoBehaviour
     {
         if (prefabIndex >= 0 && prefabIndex < prefabs.Length)
         {
-            Instantiate(prefabs[prefabIndex], transform.position + transform.forward * 2, Quaternion.identity);
+            Transform playerTransform = Camera.main.transform;
+            Instantiate(prefabs[prefabIndex], playerTransform.position + playerTransform.forward * 0.5f, Quaternion.identity);
         }
         ToggleMenu(); // Optionally close the menu after spawning
     }
