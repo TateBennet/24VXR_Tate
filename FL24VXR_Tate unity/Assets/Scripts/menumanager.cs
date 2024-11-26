@@ -1,11 +1,30 @@
+using System.Collections.Generic;
+using System.Security.Authentication.ExtendedProtection;
+using TMPro;
+using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnMenuController : MonoBehaviour
 {
     public GameObject menuPanel; // Assign the menu Panel in the inspector
     public GameObject[] prefabs; // Array to hold prefab options
+    public TextMeshProUGUI heliumtext;
+    public TextMeshProUGUI chlorinetext;
+    public GameObject heliumButton;
+    public GameObject chlorineButton;
+    public PopUp pops;
 
     private bool isMenuOpen = false;
+
+    private void Start()
+    {
+        heliumtext.enabled = false;
+        chlorinetext.enabled = false;
+        chlorineButton.SetActive(false);
+        heliumButton.SetActive(false);
+        
+    }
 
     void Update()
     {
@@ -13,6 +32,19 @@ public class SpawnMenuController : MonoBehaviour
         if (Input.GetKey(KeyCode.JoystickButton1)) // Replace with your VR button input
         {
             ToggleMenu();
+        }
+
+        if (pops.displayedObjects.ContainsKey("helium")){
+            heliumtext.enabled=true;
+            heliumButton.SetActive(true);
+            
+        }
+
+        if (pops.displayedObjects.ContainsKey("chlorine"))
+        {
+            chlorinetext.enabled = true;
+            chlorineButton.SetActive(true);
+           
         }
     }
 

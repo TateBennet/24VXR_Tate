@@ -38,7 +38,15 @@ public class elementCombiner : MonoBehaviour
         // Only proceed if this object is held
         if (isHeldL && isHeldR)
         {
-            if (collision.gameObject.CompareTag("helium") || collision.gameObject.CompareTag("chlorine"))
+            // Check the tags of both objects
+            bool thisIsHelium = gameObject.CompareTag("helium");
+            bool thisIsChlorine = gameObject.CompareTag("chlorine");
+
+            bool otherIsHelium = collision.gameObject.CompareTag("helium");
+            bool otherIsChlorine = collision.gameObject.CompareTag("chlorine");
+
+            // Only mix if one is helium and the other is chlorine
+            if ((thisIsHelium && otherIsChlorine) || (thisIsChlorine && otherIsHelium))
             {
                 // Instantiate the byproduct at the collision point
                 Instantiate(byproductPrefab, collision.contacts[0].point, Quaternion.identity);
