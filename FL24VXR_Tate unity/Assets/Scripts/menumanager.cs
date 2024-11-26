@@ -57,7 +57,7 @@ public class SpawnMenuController : MonoBehaviour
         {
             // Place the menu in front of the player
             Transform playerTransform = Camera.main.transform; // For VR, usually main camera is the head
-            menuPanel.transform.position = playerTransform.position + playerTransform.forward * 0.5f; // Adjust distance
+            menuPanel.transform.position = playerTransform.position + playerTransform.forward * 0.369f; // Adjust distance
             menuPanel.transform.rotation = Quaternion.LookRotation(playerTransform.forward); // Face the player
         }
     }

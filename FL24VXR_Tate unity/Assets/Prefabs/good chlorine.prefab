@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1557772687521153571
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3350756783527534254}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSelectEnter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TriggerPopup, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1246911714977330459, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.9717362
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.9681
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.7899
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2317596869475888807, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3249860042397649641, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7386585187881203403, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      propertyPath: m_Name
+      value: chlorine Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7386585187881203403, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      insertIndex: 5
+      addedObject: {fileID: 6701455648329108423}
+    - targetCorrespondingSourceObject: {fileID: 7386585187881203403, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3350756783527534254}
+  m_SourcePrefab: {fileID: 100100000, guid: ddafeb1adeefc624ea3cac02cf9004d5, type: 3}
+--- !u!54 &7912837644716169145 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8668965187617052058, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557772687521153571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8294572878764127464 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7386585187881203403, guid: ddafeb1adeefc624ea3cac02cf9004d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1557772687521153571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6701455648329108423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294572878764127464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b386896c087a146aab03fa2674f423, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  byproductPrefab: {fileID: 8537947299354688448, guid: 773c34d465fbf644d9bc8f670e1d85b3,
+    type: 3}
+  rb: {fileID: 7912837644716169145}
+--- !u!114 &3350756783527534254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294572878764127464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca407b367b4c847478ae1da335e8743b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayMessage: chlorine discovered!
