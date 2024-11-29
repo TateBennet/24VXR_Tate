@@ -34,6 +34,7 @@ public class dissolver : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("acid"))
         {
+            Debug.Log("acid rain!!!");
             startDissolver();
         }
     }

@@ -39,10 +39,10 @@ public class elementCombiner : MonoBehaviour
         if (isHeldL && isHeldR)
         {
             // Check the tags of both objects
-            bool thisIsHelium = gameObject.CompareTag("helium");
+            bool thisIsHelium = gameObject.CompareTag("hydrogen");
             bool thisIsChlorine = gameObject.CompareTag("chlorine");
 
-            bool otherIsHelium = collision.gameObject.CompareTag("helium");
+            bool otherIsHelium = collision.gameObject.CompareTag("hydrogen");
             bool otherIsChlorine = collision.gameObject.CompareTag("chlorine");
 
             // Only mix if one is helium and the other is chlorine

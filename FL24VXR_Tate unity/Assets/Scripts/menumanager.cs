@@ -10,9 +10,13 @@ public class SpawnMenuController : MonoBehaviour
     public GameObject menuPanel; // Assign the menu Panel in the inspector
     public GameObject[] prefabs; // Array to hold prefab options
     public TextMeshProUGUI heliumtext;
+    public TextMeshProUGUI hydrogentext;
     public TextMeshProUGUI chlorinetext;
+    public TextMeshProUGUI lithiumtext;
     public GameObject heliumButton;
     public GameObject chlorineButton;
+    public GameObject hydrogenButton;
+    public GameObject lithiumButton;
     public PopUp pops;
 
     private bool isMenuOpen = false;
@@ -23,6 +27,10 @@ public class SpawnMenuController : MonoBehaviour
         chlorinetext.enabled = false;
         chlorineButton.SetActive(false);
         heliumButton.SetActive(false);
+        hydrogenButton.SetActive(false);
+        hydrogentext.enabled = false;
+        lithiumButton.SetActive(false);
+        lithiumtext.enabled = false;
         
     }
 
@@ -45,6 +53,18 @@ public class SpawnMenuController : MonoBehaviour
             chlorinetext.enabled = true;
             chlorineButton.SetActive(true);
            
+        }
+        if (pops.displayedObjects.ContainsKey("hydrogen"))
+        {
+            hydrogentext.enabled = true;
+            hydrogenButton.SetActive(true);
+
+        }
+        if (pops.displayedObjects.ContainsKey("lithium"))
+        {
+            lithiumtext.enabled = true;
+            lithiumButton.SetActive(true);
+
         }
     }
 
