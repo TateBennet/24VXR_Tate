@@ -50,6 +50,7 @@ public class elementCombiner : MonoBehaviour
             {
                 // Instantiate the byproduct at the collision point
                 Instantiate(byproductPrefab, collision.contacts[0].point, Quaternion.identity);
+                byproductPrefab.tag = "acid";
 
                 // Destroy both objects
                 Destroy(gameObject);
