@@ -15,11 +15,10 @@ public class DialogueManager : MonoBehaviour
 
     void Start()
     {
-        nextButton.onClick.AddListener(DisplayNextLine);
         DisplayNextLine();
     }
 
-    void DisplayNextLine()
+    public void DisplayNextLine()
     {
         // Only proceed if we are not currently typing
         if (isTyping)

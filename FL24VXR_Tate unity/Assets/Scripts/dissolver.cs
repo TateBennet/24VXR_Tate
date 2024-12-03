@@ -28,6 +28,8 @@ public class dissolver : MonoBehaviour
 
             yield return null;
         }
+
+        Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,6 +37,7 @@ public class dissolver : MonoBehaviour
         if (collision.gameObject.CompareTag("acid"))
         {
             Debug.Log("acid rain!!!");
+            Destroy(collision.gameObject);
             startDissolver();
         }
     }
