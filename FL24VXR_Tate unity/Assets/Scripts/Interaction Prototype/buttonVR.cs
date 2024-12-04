@@ -13,6 +13,7 @@ public class buttonVR : MonoBehaviour
     GameObject presser;
     public GameObject helium;
     bool isPressed;
+    public AudioSource diskTraySFX;
 
     [SerializeField] private Animator diskTray = null;
 
@@ -54,10 +55,15 @@ public class buttonVR : MonoBehaviour
 
     }
 
+    public void playSound()
+    {
+        diskTraySFX.Play();
+    }
+
     public void diskTrayFunction()
     {
         diskTray.Play(chooseAnimation, 0, 0.0f);
-        StartCoroutine(ActivateAfterSeconds(2f));
+        StartCoroutine(ActivateAfterSeconds(3.33f));
     }
 
     IEnumerator ActivateAfterSeconds(float delay)

@@ -9,6 +9,7 @@ TagManager:
   - hydrogen
   - lithium
   - acid
+  - iron
   layers:
   - Default
   - TransparentFX
