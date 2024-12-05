@@ -9,6 +9,7 @@ public class floatMechanic : MonoBehaviour
     public XRDirectInteractor rightHandInteractor; // Drag your right hand interactor here
     public Rigidbody playerRigidbody; // Drag the Rigidbody attached to your character here
     public float floatForce = 5f; // Adjust this value to control upward speed
+    public AudioSource windSFX;
 
     void Update()
     {
@@ -50,5 +51,6 @@ public class floatMechanic : MonoBehaviour
     void FloatUpwards()
     {
         playerRigidbody.AddForce(Vector3.up * floatForce, ForceMode.Acceleration);
+
     }
 }

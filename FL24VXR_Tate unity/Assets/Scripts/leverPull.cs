@@ -8,6 +8,7 @@ public class leverPull : MonoBehaviour
     public float activationThreshold = 30f; // Angle to activate
     public GameObject prefabToInstantiate; // The prefab to spawn
     public Transform spawnPoint; // The location to spawn the prefab
+    public AudioSource pop;
 
     // Call this method when the lever is interacted with (e.g., OnGrab or custom event)
     public void CheckLeverAngle()
@@ -18,6 +19,7 @@ public class leverPull : MonoBehaviour
         if (angle >= activationThreshold)
         {
             Instantiate(prefabToInstantiate, spawnPoint.position, spawnPoint.rotation);
+            pop.Play();
         }
     }
 

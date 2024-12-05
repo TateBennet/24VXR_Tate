@@ -63,7 +63,7 @@ public class buttonVR : MonoBehaviour
     public void diskTrayFunction()
     {
         diskTray.Play(chooseAnimation, 0, 0.0f);
-        StartCoroutine(ActivateAfterSeconds(3.33f));
+        StartCoroutine(ActivateAfterSeconds(3f));
     }
 
     IEnumerator ActivateAfterSeconds(float delay)

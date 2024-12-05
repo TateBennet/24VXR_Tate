@@ -55,6 +55,7 @@ public class elementCombiner : MonoBehaviour
                 // Destroy both objects
                 Destroy(gameObject);
                 Destroy(collision.gameObject);
+
             }
         }
     }

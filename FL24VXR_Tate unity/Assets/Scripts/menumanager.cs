@@ -30,8 +30,9 @@ public class SpawnMenuController : MonoBehaviour
 
     void Update()
     {
+
         // Check for button press (example: 'X' button on Oculus or 'B' on a keyboard)
-        if (Input.GetKey(KeyCode.JoystickButton1)) // Replace with your VR button input
+        if (Input.GetKeyDown(KeyCode.JoystickButton1)) // Replace with your VR button input
         {
             ToggleMenu();
         }

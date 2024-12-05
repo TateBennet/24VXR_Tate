@@ -13,8 +13,16 @@ public class laserLock : MonoBehaviour
 
     private Rigidbody frozenRigidbody;
 
+    public AudioSource laserSFX;
+
+    [SerializeField] private Animator laserActivate = null;
+
+    [SerializeField] private string chooseAnimation = "animationName";
+
     void OnTriggerEnter(Collider other)
     {
+        laserSFX.Play();
+        laserActivate.Play(chooseAnimation, 0, 0.0f);
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null && targetTransform != null) // Ensure there is a target
         {

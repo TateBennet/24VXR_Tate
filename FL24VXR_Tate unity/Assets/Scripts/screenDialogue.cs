@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public Button nextButton;
+    public AudioSource typingSFX;
 
     // Array of dialogue lines
     public string[] dialogueLines;
@@ -40,6 +41,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence(string sentence)
     {
         isTyping = true;
+        typingSFX.Play();
         dialogueText.text = ""; // Clear previous text
         foreach (char letter in sentence)
         {
@@ -47,5 +49,6 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.03f); // Adjust typing speed here
         }
         isTyping = false;
+        typingSFX.Stop();
     }
 }

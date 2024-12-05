@@ -7,6 +7,7 @@ public class dissolver : MonoBehaviour
 {
     public float dissolveDuration = 2;
     public float dissolveStrength;
+    public AudioSource acidBurn;
 
     public void startDissolver()
     {
@@ -38,6 +39,7 @@ public class dissolver : MonoBehaviour
         {
             Debug.Log("acid rain!!!");
             Destroy(collision.gameObject);
+            acidBurn.Play();
             startDissolver();
         }
     }
