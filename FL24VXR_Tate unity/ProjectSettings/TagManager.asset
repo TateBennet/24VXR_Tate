@@ -10,6 +10,7 @@ TagManager:
   - lithium
   - acid
   - iron
+  - laserbeam
   layers:
   - Default
   - TransparentFX

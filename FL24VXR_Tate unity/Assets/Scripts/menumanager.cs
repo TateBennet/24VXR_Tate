@@ -15,6 +15,8 @@ public class SpawnMenuController : MonoBehaviour
     public GameObject lithiumButton;
     public GameObject ironButton;
     public PopUp pops;
+    public coins coins;
+    public TextMeshProUGUI coinsText;
 
     private bool isMenuOpen = false;
 
@@ -25,6 +27,7 @@ public class SpawnMenuController : MonoBehaviour
         hydrogenButton.SetActive(false);
         lithiumButton.SetActive(false);
         ironButton.SetActive(false);
+        UpdateCoinDisplay();
         
     }
 
@@ -62,6 +65,9 @@ public class SpawnMenuController : MonoBehaviour
             ironButton.SetActive(true);
 
         }
+
+        UpdateCoinDisplay();    
+
     }
 
     void ToggleMenu()
@@ -87,5 +93,14 @@ public class SpawnMenuController : MonoBehaviour
             Instantiate(prefabs[prefabIndex], playerTransform.position + playerTransform.forward * 0.5f, Quaternion.identity);
         }
         ToggleMenu(); // Optionally close the menu after spawning
+    }
+
+    void UpdateCoinDisplay()
+    {
+        // Get the total coin count from the CoinTracker script
+        int totalCoins = coins.coinCount;
+
+        // Update the text UI to show the current coin count
+        coinsText.text = totalCoins.ToString() + "/100 collected";
     }
 }

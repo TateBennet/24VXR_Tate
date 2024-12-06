@@ -9,6 +9,8 @@ public class leverPull : MonoBehaviour
     public GameObject prefabToInstantiate; // The prefab to spawn
     public Transform spawnPoint; // The location to spawn the prefab
     public AudioSource pop;
+    public GameObject hydrogen;
+    private bool hasplayed = false;
 
     // Call this method when the lever is interacted with (e.g., OnGrab or custom event)
     public void CheckLeverAngle()
@@ -18,8 +20,17 @@ public class leverPull : MonoBehaviour
 
         if (angle >= activationThreshold)
         {
-            Instantiate(prefabToInstantiate, spawnPoint.position, spawnPoint.rotation);
-            pop.Play();
+            if (!hasplayed)
+            {
+                hydrogen.SetActive(true);
+                pop.Play();
+                hasplayed = true;
+            }
+            else if (hasplayed)
+            {
+                Instantiate(prefabToInstantiate, spawnPoint.position, spawnPoint.rotation);
+                pop.Play();
+            }
         }
     }
 

@@ -10,38 +10,44 @@ public class laserLock : MonoBehaviour
     public float scaleUpFactor = 1.5f;          // Factor by which to scale the object
     public float rotationSpeed = 0.5f;            // Speed for rotation matching
     public Material highlightColor;
+    public GameObject laserBeam;
+    bool hasplayed = false;
 
     private Rigidbody frozenRigidbody;
 
     public AudioSource laserSFX;
 
     [SerializeField] private Animator laserActivate = null;
-
     [SerializeField] private string chooseAnimation = "animationName";
+    public float delayInSeconds = 7f;
 
     void OnTriggerEnter(Collider other)
     {
-        laserSFX.Play();
-        laserActivate.Play(chooseAnimation, 0, 0.0f);
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb != null && targetTransform != null) // Ensure there is a target
-        {
 
-            Renderer renderer = other.GetComponent<Renderer>();
-            if (renderer != null)
+            laserSFX.Play();
+            laserActivate.Play(chooseAnimation, 0, 0.0f);
+
+            StartCoroutine(StopAnimationAfterDelay());
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            if (rb != null && targetTransform != null) // Ensure there is a target
             {
-                // Change the color to the highlight color
-                renderer.material = highlightColor;
+
+                Renderer renderer = other.GetComponent<Renderer>();
+                if (renderer != null)
+                {
+                    // Change the color to the highlight color
+                    renderer.material = highlightColor;
+                }
+
+                // Check if the object is held and force release it
+                var grabComponent = other.GetComponent<XRGrabInteractable>();
+                if (grabComponent && grabComponent.isSelected)
+                {
+                    grabComponent.interactionManager.SelectExit(grabComponent.selectingInteractor, grabComponent);
+                }
+                StartCoroutine(PullAndRotateObject(rb, targetTransform.position, targetTransform.rotation, grabComponent));
             }
 
-            // Check if the object is held and force release it
-            var grabComponent = other.GetComponent<XRGrabInteractable>();
-            if (grabComponent && grabComponent.isSelected)
-            {
-                grabComponent.interactionManager.SelectExit(grabComponent.selectingInteractor, grabComponent);
-            }
-            StartCoroutine(PullAndRotateObject(rb, targetTransform.position, targetTransform.rotation, grabComponent));
-        }
     }
 
     IEnumerator PullAndRotateObject(Rigidbody rb, Vector3 targetPosition, Quaternion targetRotation, XRGrabInteractable grabComponent)
@@ -74,6 +80,13 @@ public class laserLock : MonoBehaviour
 
         // Store the rigidbody reference to rotate it in Update
         frozenRigidbody = rb;
+    }
+
+    IEnumerator StopAnimationAfterDelay()
+    {
+        // Wait for the specified duration
+        yield return new WaitForSeconds(delayInSeconds);
+        laserBeam.SetActive(true);
     }
 
     void Update()
