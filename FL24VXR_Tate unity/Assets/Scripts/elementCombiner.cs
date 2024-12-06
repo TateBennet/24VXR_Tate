@@ -48,6 +48,7 @@ public class elementCombiner : MonoBehaviour
             // Only mix if one is helium and the other is chlorine
             if ((thisIsHelium && otherIsChlorine) || (thisIsChlorine && otherIsHelium))
             {
+
                 // Instantiate the byproduct at the collision point
                 Instantiate(byproductPrefab, collision.contacts[0].point, Quaternion.identity);
                 byproductPrefab.tag = "acid";

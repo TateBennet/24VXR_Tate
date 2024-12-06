@@ -12,6 +12,7 @@ public class laserLock : MonoBehaviour
     public Material highlightColor;
     public GameObject laserBeam;
     bool hasplayed = false;
+    public GameObject particles;
 
     private Rigidbody frozenRigidbody;
 
@@ -26,6 +27,7 @@ public class laserLock : MonoBehaviour
 
             laserSFX.Play();
             laserActivate.Play(chooseAnimation, 0, 0.0f);
+            particles.SetActive(false);
 
             StartCoroutine(StopAnimationAfterDelay());
             Rigidbody rb = other.GetComponent<Rigidbody>();
