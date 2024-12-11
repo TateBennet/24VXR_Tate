@@ -18,16 +18,18 @@ public class leverPull : MonoBehaviour
         float angle = transform.localEulerAngles.x;
         if (angle > 180) angle -= 360; // Normalize angle
 
-        if (angle >= activationThreshold)
+        if (angle >= activationThreshold) // pull lever at least 60 degrees
         {
             if (!hasplayed)
             {
+                //instantiate first object and play sfx to ensure it carries proper sfx on prefab on first instance
                 hydrogen.SetActive(true);
                 pop.Play();
                 hasplayed = true;
             }
             else if (hasplayed)
             {
+                // instantiate prefab duplicates after the first and play sfx
                 Instantiate(prefabToInstantiate, spawnPoint.position, spawnPoint.rotation);
                 pop.Play();
             }

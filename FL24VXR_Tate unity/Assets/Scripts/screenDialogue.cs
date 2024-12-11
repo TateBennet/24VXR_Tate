@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence)
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.03f); // Adjust typing speed here
+            yield return new WaitForSeconds(0.03f); // Adjust typing speed
         }
         isTyping = false;
         typingSFX.Stop();

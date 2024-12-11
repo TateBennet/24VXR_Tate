@@ -13,6 +13,7 @@ public class breakLock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if laser collides with lock play animation
         if (other.gameObject.CompareTag("laserbeam"))
         {
             openDoors();
@@ -23,6 +24,7 @@ public class breakLock : MonoBehaviour
 
         void openDoors()
         {
+            //swap the intact lock for the broken lock and open the doors
             Debug.Log("collision detected");
             myLock.SetActive(false);
             brokenLock.SetActive(true);

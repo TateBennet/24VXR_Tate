@@ -28,20 +28,22 @@ public class SpawnMenuController : MonoBehaviour
         lithiumButton.SetActive(false);
         ironButton.SetActive(false);
         UpdateCoinDisplay();
+        //ensures all buttons are not visible at the start
         
     }
 
     void Update()
     {
 
-        // Check for button press (example: 'X' button on Oculus or 'B' on a keyboard)
-        if (Input.GetKeyDown(KeyCode.JoystickButton1)) // Replace with your VR button input
+        // Check for button press to toggle menu
+        if (Input.GetKeyDown(KeyCode.JoystickButton1))
         {
             ToggleMenu();
         }
 
         if (pops.displayedObjects.ContainsKey("helium")){
             heliumButton.SetActive(true);
+            //if the object has been picked up before set its associated menu button as visible
             
         }
 

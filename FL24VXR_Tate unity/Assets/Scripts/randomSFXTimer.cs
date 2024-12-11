@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class randomSFXTimer : MonoBehaviour
 {
-    public AudioSource audioSource; // Assign your AudioSource here
+    public AudioSource audioSource; // Assign audio source
     private float timer;
     private float nextPlayTime;
 
     void Start()
     {
-        SetRandomInterval();
+        SetRandomInterval(); //initialize first timer
     }
 
     void Update()
@@ -19,6 +19,7 @@ public class randomSFXTimer : MonoBehaviour
 
         if (timer >= nextPlayTime)
         {
+            //wait for timer to hit then play sound and reset random timer
             PlaySound();
             SetRandomInterval();
         }

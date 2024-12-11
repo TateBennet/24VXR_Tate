@@ -16,6 +16,7 @@ public class dissolver : MonoBehaviour
 
     public IEnumerator dissolverFunction()
     {
+        //animate my dissolve shader over an elapsed time then destroy the object it is attatched to.
         float elapsedTime = 0;
 
         Material dissolveMaterial = GetComponent<Renderer>().material;
@@ -35,6 +36,7 @@ public class dissolver : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //start the dissolve animation, play the sound effect and destroy the potion bottle
         if (collision.gameObject.CompareTag("acid"))
         {
             Debug.Log("acid rain!!!");

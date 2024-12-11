@@ -19,6 +19,7 @@ public class coins : MonoBehaviour
 
     private IEnumerator PlaySoundAndDestroy()
     {
+        //play coin sound and destroy itself after waiting to ensure sfx plays fully
         coinSFX.Play();
         yield return new WaitForSeconds(0.15f);
         Destroy(gameObject);
